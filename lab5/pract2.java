@@ -30,7 +30,7 @@ chain to a primary constructor using the this() keyword.
     }
 }
 
-public class prac2 {
+public class pract2 {
 
     public static void main(String[] args) {
         Employee emp1 = new Employee("Alice", "E001");
