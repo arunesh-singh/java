@@ -29,5 +29,9 @@ class CalculateArea {
 
         double triangleArea = calculator.area(7.0, 3.0, true);
         System.out.println("Area of triangle: " + triangleArea);
+
+        double num = (double) (10/4) + 3.5*2;
+
+        System.err.println(num);
     }
 }

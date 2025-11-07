@@ -5,58 +5,21 @@
  */
 
 class Polynomial {
-    private double[] coefficients;
+    private double[] c;
 
-    public Polynomial(double... coefficients) {
-        this.coefficients = coefficients;
+    public Polynomial(double... c) {
+        this.c = c;
     }
 
     public void display() {
-        if (coefficients.length == 0) {
-            System.out.println("0");
-            return;
+        for (int i = 0; i < c.length; i++) {
+            if (c[i] == 0) continue;
+            int p = c.length - 1 - i;
+            System.out.print((i > 0 && c[i] > 0 ? "+" : "") + c[i]);
+            if (p > 0) System.out.print("x");
+            if (p > 1) System.out.print("^" + p);
         }
-
-        StringBuilder polynomial = new StringBuilder();
-        int degree = coefficients.length - 1;
-
-        for (int i = 0; i < coefficients.length; i++) {
-            double coeff = coefficients[i];
-            int power = degree - i;
-
-            if (coeff == 0) continue;
-
-            if (polynomial.length() > 0 && coeff > 0) {
-                polynomial.append(" + ");
-            } else if (coeff < 0) {
-                if (polynomial.length() > 0) {
-                    polynomial.append(" - ");
-                    coeff = Math.abs(coeff);
-                }
-            }
-
-            if (power == 0) {
-                polynomial.append(coeff);
-            } else if (power == 1) {
-                if (coeff == 1) {
-                    polynomial.append("x");
-                } else if (coeff == -1) {
-                    polynomial.append("-x");
-                } else {
-                    polynomial.append(coeff).append("x");
-                }
-            } else {
-                if (coeff == 1) {
-                    polynomial.append("x^").append(power);
-                } else if (coeff == -1) {
-                    polynomial.append("-x^").append(power);
-                } else {
-                    polynomial.append(coeff).append("x^").append(power);
-                }
-            }
-        }
-
-        System.out.println(polynomial.length() > 0 ? polynomial.toString() : "0");
+        System.out.println();
     }
 }
 
