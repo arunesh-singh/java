@@ -2,6 +2,8 @@
   Implement a Human class with two constructors. Create a Student class that calls both the Human constructors in different ways using super().
  */
 
+import lab5.Student;
+
 class Human {
 
     String name;
